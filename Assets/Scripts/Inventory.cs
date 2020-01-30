@@ -36,7 +36,7 @@ public class Inventory : MonoBehaviour
 
             items.Add(item);
             if(onItemChangedCallback != null) {
-                onItemChangedCallback.invoke();
+                onItemChangedCallback.Invoke();
             }
         }
         return true;
@@ -44,7 +44,7 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item){
         items.Remove(item);
         if(onItemChangedCallback != null) {
-            onItemChangedCallback.invoke();
+            onItemChangedCallback.Invoke();
         }
     }
 }
