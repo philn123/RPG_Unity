@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 70babd238d788aa42b649a55ef933def,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -2996,6 +2997,7 @@ GameObject:
   - component: {fileID: 710368347}
   - component: {fileID: 710368350}
   - component: {fileID: 710368349}
+  - component: {fileID: 710368351}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3114,6 +3116,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   interactionTransform: {fileID: 710368345}
+--- !u!114 &710368351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710368343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eeddc4fde679349b8bf45f766fb173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackDelay: 0.6
 --- !u!1001 &711769219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9188,6 +9204,7 @@ GameObject:
   - component: {fileID: 1900056354}
   - component: {fileID: 1900056355}
   - component: {fileID: 1900056356}
+  - component: {fileID: 1900056357}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -9319,6 +9336,20 @@ MonoBehaviour:
     baseValue: 5
   armor:
     baseValue: 0
+--- !u!114 &1900056357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900056348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eeddc4fde679349b8bf45f766fb173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackDelay: 0.6
 --- !u!1 &1917560325
 GameObject:
   m_ObjectHideFlags: 0
