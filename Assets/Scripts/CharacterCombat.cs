@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterCombat : MonoBehaviour
 {
     private CharacterStats myStats;
+    CharacterStats opponentStats;
 
     public float attackSpeed = 1f;
     private float attackCooldown = 0f;
@@ -39,8 +40,8 @@ public class CharacterCombat : MonoBehaviour
         if (attackCooldown <= 0f)
         {
             //targetStats.TakeDamage(myStats.damage.GetValue());
-            StartCoroutine(DoDamge(targetStats, attackDelay));
-
+            //StartCoroutine(DoDamge(targetStats, attackDelay));
+            opponentStats = targetStats;
             if (OnAttack != null)
             {
                 OnAttack();
@@ -52,15 +53,20 @@ public class CharacterCombat : MonoBehaviour
         }
     }
 
-    IEnumerator DoDamge (CharacterStats stats, float delay)
-    {
-        yield return new WaitForSeconds(delay);
+    // IEnumerator DoDamge (CharacterStats stats, float delay)
+    // {
+    //     yield return new WaitForSeconds(delay);
 
-        stats.TakeDamage(myStats.damage.GetValue());
-        if (stats.currentHealth <= 0)
+
+
+    // }
+
+    public void AttackHit_AnimationEvent()
+    {
+        opponentStats.TakeDamage(myStats.damage.GetValue());
+        if (opponentStats.currentHealth <= 0)
         {
             InCombat = false;
         }
-
     }
 }
