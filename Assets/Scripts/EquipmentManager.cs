@@ -7,6 +7,9 @@ public class EquipmentManager : MonoBehaviour
     #region Singleton
     public static EquipmentManager instance;
 
+    public Transform Shield;
+    public Transform Sword;
+
     void Awake() {
         
         instance = this;
@@ -53,11 +56,27 @@ public class EquipmentManager : MonoBehaviour
 
         currentEquipment[slotIndex] = newItem;
         SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
-        newMesh.transform.parent = targetMesh.transform;
-
-        newMesh.bones = targetMesh.bones;
-        newMesh.rootBone = targetMesh.rootBone;
+        //start of new code from youtube ep12
         currentMeshes[slotIndex] = newMesh;
+
+        if (newItem != null && newItem.equipSlot == EquipmentSlot.Weapon)
+        {
+            newMesh.rootBone = Sword;
+        }else if(newItem != null && newItem.equipSlot == EquipmentSlot.Shield)        
+        {
+            newMesh.rootBone = Shield;
+        }else
+        {
+            newMesh.transform.parent = targetMesh.transform;
+            newMesh.bones = targetMesh.bones;
+            newMesh.rootBone = targetMesh.rootBone;
+        }
+
+        // newMesh.transform.parent = targetMesh.transform;
+
+        // newMesh.bones = targetMesh.bones;
+        // newMesh.rootBone = targetMesh.rootBone;
+        // currentMeshes[slotIndex] = newMesh;
 
     }
 
