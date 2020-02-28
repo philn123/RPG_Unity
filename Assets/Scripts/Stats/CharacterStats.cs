@@ -2,6 +2,9 @@
 
 public class CharacterStats : MonoBehaviour
 {
+    [SerializeField]
+    protected EventManager eventManager = null;
+
     public int maxHealth = 100;
     public int currentHealth {get; private set;} //any class gets, only class set
 

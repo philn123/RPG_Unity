@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact(){
         //method is going to be overwritten\
-        //Debug.Log("Interacting with " + transform.name);
+        Debug.Log("Interacting with " + transform.name);
     }
 
     public void OnFocused (Transform playerTransform){
