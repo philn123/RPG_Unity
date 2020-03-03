@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-
         if(Input.GetMouseButtonDown(1)){
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -56,7 +55,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        
     }
     void SetFocus (Interactable newFocus){
         if(newFocus != focus){

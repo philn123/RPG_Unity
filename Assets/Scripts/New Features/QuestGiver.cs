@@ -67,9 +67,7 @@ public class QuestGiver : Interactable
 
         acceptButton.onClick.AddListener(() => OnAccept());
         switchButton.onClick.AddListener(() => OnSwitch());
-
         progressText.SetText("");
-
     }
 
     private void OnAccept()
@@ -79,14 +77,6 @@ public class QuestGiver : Interactable
         currentQuest.Accepted = true;
 
         PlayerJournal.instance.Add(currentQuest);
-
-        //progressText.SetText(string.Format(
-        //    progressFormat,
-        //    currentQuest.ActionsCompleted,
-        //    currentQuest.ActionsNeeded));
-
-        //acceptButton.gameObject.SetActive(false);
-        //switchButton.gameObject.SetActive(false);
 
         //remove quest
         quests.RemoveAt(indexCurrentQuest);
@@ -100,7 +90,6 @@ public class QuestGiver : Interactable
         {
             OnSwitch();
         }
-
     }
 
     private void OnSwitch()
@@ -109,6 +98,5 @@ public class QuestGiver : Interactable
         currentQuest = quests[indexCurrentQuest];
         titleText.SetText(quests[indexCurrentQuest].Title);
         descriptionText.SetText(quests[indexCurrentQuest].Description);
-
     }
  }

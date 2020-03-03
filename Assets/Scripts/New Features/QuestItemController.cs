@@ -5,7 +5,7 @@ using TMPro;
 
 public class QuestItemController : MonoBehaviour
 {
-    public TextMeshProUGUI Title;
-    public TextMeshProUGUI Description;
-    public TextMeshProUGUI ProgressText;
+    public TextMeshProUGUI Title = null;
+    public TextMeshProUGUI Description = null;
+    public TextMeshProUGUI ProgressText = null;
 }
