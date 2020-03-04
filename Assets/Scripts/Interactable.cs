@@ -12,7 +12,9 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact(){
         //method is going to be overwritten\
-        //Debug.Log("Interacting with " + transform.name);
+        #if UNITY_EDITOR
+        Debug.Log("Interacting with " + transform.name);
+        #endif
     }
 
     public void OnFocused (Transform playerTransform){

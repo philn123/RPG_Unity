@@ -21,6 +21,9 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
+    [SerializeField]
+    private EventManager eventManager = null;
+
 
     public int space = 20;
 
@@ -38,6 +41,7 @@ public class Inventory : MonoBehaviour
             if(onItemChangedCallback != null) {
                 onItemChangedCallback.Invoke();
             }
+            eventManager.OnEquipmentPickup();
         }
         return true;
     }

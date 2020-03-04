@@ -8,6 +8,8 @@ public class EnemyStats : CharacterStats
     {
         base.Die();
         //ragdoll
+        eventManager.OnEnemyDeath();
+
         Destroy(gameObject);
     }
 }
